@@ -1,0 +1,22 @@
+service: serverless-es6-gcp-demo
+
+provider:
+  name: google
+  runtime: nodejs
+  project: showmethenews-1
+  credentials: ~/.gcloud/keyfile.json
+
+plugins:
+  - serverless-webpack
+  - serverless-google-cloudfunctions
+
+functions:
+  newYorkTimesNews:
+    handler: newYorkTimesNews
+    events:
+      - http: newyorktimesnews
+
+custom:
+    webpack:
+      webpackConfig: 'webpack.config.js'
+      includeModules: true

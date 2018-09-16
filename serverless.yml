@@ -2,7 +2,8 @@ service: serverless-es6-gcp-demo
 
 provider:
   name: google
-  runtime: nodejs
+  runtime: nodejs8
+  region: us-central1
   project: showmethenews-1
   credentials: ~/.gcloud/keyfile.json
 
